@@ -1,4 +1,5 @@
 <?php 
+require_once "./_config.php";
 $db = new PDO('mysql:host=localhost; dbname=ittcporfolio; charset=utf8', 'david', 'zxcv1234');
 $rows = $db->query("SELECT * FROM portfolio")->fetchAll();
 // print_r($rows);
