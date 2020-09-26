@@ -166,4 +166,30 @@
     easing: "ease-in-out"
   });
 
+  $(document).ready(function(){
+    $('#login_form').on("submit", function(event){  
+        event.preventDefault();  
+        $.ajax({  
+            url:"login.php",
+            method:"POST", 
+            dataType:'json',  
+            data:$('#login_form').serialize(),  
+            success:function(data){
+                $('#login_form')[0].reset(); 
+                if(data['data'] == true){
+                    const profile = "profile";
+                    function saveProfile(text){
+                    localStorage.setItem(profile, text);
+                    }
+                    saveProfile("admin");
+                  location.replace("./tables.html"); 
+                } else {
+                    alert("관리자 권한이 없습니다.");
+                    location.replace("./index.html");
+                   }
+                }
+            });
+    });
+  });
+
 })(jQuery);
