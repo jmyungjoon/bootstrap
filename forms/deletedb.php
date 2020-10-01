@@ -1,6 +1,6 @@
 <?php
 // 데이터베이스 연결
-$db = new PDO('mysql:host=localhost; dbname=ittcporfolio; charset=utf8', 'david', 'zxcv1234');
+$db = new PDO('mysql:host=localhost; dbname=ittcportfolio; charset=utf8', 'david', 'zxcv1234');
 $rows = $db->query("SELECT * FROM portfolio")->fetchAll();
 // print_r($rows);
 // exit;

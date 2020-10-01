@@ -1,7 +1,7 @@
 <?php
 // 데이터베이스 연결
 // include_once ("./forms/contactDB.php");
-$db = new PDO('mysql:host=localhost; dbname=ittcporfolio; charset=utf8', 'david', 'zxcv1234');
+$db = new PDO('mysql:host=localhost; dbname=ittcportfolio; charset=utf8', 'david', 'zxcv1234');
 $rows = $db->query("SELECT * FROM portfolio")->fetchAll();
 
 // 사진 업로드
@@ -37,7 +37,7 @@ echo $data[1];
 $sql = "
     INSERT INTO portfolio SET
     creator = '{$_POST["creator"]}',  # 작성자
-    image = '{$_POST["image"]}',  # 사진
+    image = '{$new_file_name}',  # 사진
     apptype = '{$_POST["apptype"]}',    # 앱종류
     webname = '{$_POST["webname"]}',    # 웹이름
     url = '{$_POST["url"]}',    # 주소

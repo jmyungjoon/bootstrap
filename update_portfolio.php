@@ -1,5 +1,5 @@
 <?php 
-$db = new PDO('mysql:host=localhost; dbname=ittcporfolio; charset=utf8', 'david', 'zxcv1234');
+$db = new PDO('mysql:host=localhost; dbname=ittcportfolio; charset=utf8', 'david', 'zxcv1234');
 $rows = $db->query("SELECT * FROM portfolio WHERE no=".$_GET['no'])->fetchAll();
 $no=$_GET['no'];
 
@@ -101,16 +101,16 @@ $no=$_GET['no'];
                 data:$('#update_form').serialize(),  
                 success:function(data){  
                     $('#update_form')[0].reset();  
-                    // location.replace("./tables.html");
+                    location.replace("./portfolio.html");
                 }  
               }); 
             } else {
-                  // location.replace("./tables.html");
+                  location.replace("./portfolio.html");
             }
   });
 
   function goBack() {
-    location.replace("./tables.html");
+    location.replace("./portfolio.html");
   }
   
 </script>

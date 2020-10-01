@@ -1,5 +1,5 @@
 <?php 
-$db = new PDO('mysql:host=localhost; dbname=ittcporfolio; charset=utf8', 'david', 'zxcv1234');
+$db = new PDO('mysql:host=localhost; dbname=ittcportfolio; charset=utf8', 'david', 'zxcv1234');
 $rows = $db->query("SELECT * FROM portfolio")->fetchAll();
 // print_r($rows);
 // exit;
@@ -304,7 +304,7 @@ $rows = $db->query("SELECT * FROM portfolio")->fetchAll();
                 success:function(data){  
                     $('#insert_form')[0].reset();  
                     $('#add_data_Modal').modal('hide'); 
-                    location.replace("./tables.html");
+                    location.replace("./portfolio.html");
                 }  
             });  
         }  

@@ -1,5 +1,5 @@
 <?php 
-$db = new PDO('mysql:host=localhost; dbname=ittcporfolio; charset=utf8', 'david', 'zxcv1234');
+$db = new PDO('mysql:host=localhost; dbname=ittcportfolio; charset=utf8', 'david', 'zxcv1234');
 echo "hello";
 $rows = $db->query("SELECT * FROM portfolio WHERE no=".$_GET['no'])->fetchAll();
 echo $rows;
