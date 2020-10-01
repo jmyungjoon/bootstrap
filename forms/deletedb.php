@@ -17,8 +17,8 @@ $no = $_POST["no"];
     print_r($db->errorInfo());    // 쿼리문에 문제가 있으면 에러 출력
   }
   
+  $imageName = $_POST["imageName"];
   $file_to_delete = "../assets/img/portfolio/".$imageName;
-  
   if (is_file($file_to_delete)){
     unlink($file_to_delete);
     echo "<h3>{$imageName}가 지워졌습니다.</h3>";

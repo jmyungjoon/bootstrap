@@ -37,6 +37,14 @@ $rows = $db->query("SELECT * FROM portfolio")->fetchAll();
       margin-left: 9px;
       margin-bottom: 18px;
     }
+    .thombnail {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width:100px;
+      height: 90px;
+
+    }
   </style>
 
 </head>
@@ -144,15 +152,14 @@ $rows = $db->query("SELECT * FROM portfolio")->fetchAll();
                         <tr> 
                           <td><?php echo $row['no'] ?></td>
                           <td><?php echo $row['creator'] ?></td>
-                          <td><?php echo $row['image'] ?></td>
+                          <td><a href="./assets/img/portfolio/<?php echo $row['image'] ?>" method="GET" name="viewImage" id="<?php echo $row['id'] ?>" ><img class="thombnail" src="./assets/img/portfolio/<?php echo $row['image'] ?>" ></td></a>
                           <td><?php echo $row['apptype'] ?></td>
                           <td><?php echo $row['webname'] ?></td>
                           <td><?php echo $row['url'] ?></td>
                           <td><?php echo $row['date'] ?></td>
-                          <td><a href="./assets/img/portfolio/<?php echo $row['image'] ?>" method="GET" name="viewImage" class="viewImage btn btn-secondary btn-sm" id="<?php echo $row['id'] ?>" >Picture</a>
-                          <?php echo '<a class="edit_row btn btn-primary btn-sm" href="./update_portfolio.php?no='.$row['no'].'">Edit</a>'; ?>
-                          <button name="remove_row" class="remove_row btn btn-danger btn-sm" id="<?php echo $row['id'] ?>" >Delete</button>
-                              </td>
+                          <td><?php echo '<a class="edit_row btn btn-primary btn-sm" href="./update_portfolio.php?no='.$row['no'].'">Edit</a>'; ?>
+                              <button name="remove_row" class="remove_row btn btn-danger btn-sm" id="<?php echo $row['id'] ?>" >Delete</button>
+                          </td>
                         </tr>
                         <?php endforeach ?>
                   </tbody>
@@ -220,9 +227,6 @@ $rows = $db->query("SELECT * FROM portfolio")->fetchAll();
               <label>Enter Creator</label>
               <input type="text" name="creator" id="creator" class="form-control" />
               <span id="user-availability-status" style="color:red"></span> 
-              <br />
-              <label>Enter Image</label>
-              <input type="text" name="image" id="image" class="form-control"/>
               <br />
               <label>Enter Apptype</label>
               <input type="text" name="apptype" id="apptype" class="form-control" />

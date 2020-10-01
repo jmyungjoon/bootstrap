@@ -182,7 +182,7 @@
                     localStorage.setItem(profile, text);
                     }
                     saveProfile("admin");
-                  location.replace("./tables.html"); 
+                  location.replace("./portfolio.html"); 
                 } else {
                     alert("관리자 권한이 없습니다.");
                     location.replace("./index.html");

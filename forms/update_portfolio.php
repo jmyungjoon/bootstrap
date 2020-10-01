@@ -103,16 +103,16 @@ $no=$_GET['no'];
                 data:$('#update_form').serialize(),  
                 success:function(data){  
                     $('#update_form')[0].reset();  
-                    location.replace("./tables.html");
+                    location.replace("./portfolio.html");
                 }  
               }); 
             } else {
-                  location.replace("./tables.html");
+                  location.replace("./portfolio.html");
             }
   });
 
   function goBack() {
-    location.replace("./tables.html");
+    location.replace("./portfolio.html");
   }
   
 </script>
